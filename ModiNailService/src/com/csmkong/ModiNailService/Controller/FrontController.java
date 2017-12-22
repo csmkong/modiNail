@@ -1,4 +1,4 @@
-package com.csmkong.ModiNailService;
+package com.csmkong.ModiNailService.Controller;
 
 import java.io.IOException;
 
@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.csmkong.ModiNailService.DAO.InventoryDAO;
 
 /**
  * Servlet implementation class FrontController

@@ -1,4 +1,4 @@
-package com.csmkong.ModiNailService;
+package com.csmkong.ModiNailService.DTO;
 import java.sql.Timestamp;
 
 public class InventoryDTO {
