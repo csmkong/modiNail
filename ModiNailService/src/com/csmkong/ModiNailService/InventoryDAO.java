@@ -18,27 +18,32 @@ public class InventoryDAO {
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
+		if(dataSource == null){
+			System.out.println("!!!!!!!!!!!!!dataSource is null.");
+		}
 	}
 	
 	public void getItem(){
 		
-		
 		Connection connection = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
-		
 		try {
+			System.out.println("before get Connection");
+			/*
 			connection = dataSource.getConnection();
+			
+			System.out.println("After get connection");
+			
 			statement = connection.createStatement();
-			String query = "SELECT * FROM inventory";
+			String query = "SELECT * FROM userinfo";
 			resultSet = statement.executeQuery(query);
 			
 			while(resultSet.next()) {
-				int sid = resultSet.getInt("sid");
-				int item = resultSet.getInt("sid");
-				System.out.println(sid+" : "+item);
+				String id = resultSet.getString("id");
+				System.out.println(id);
 				
-			}
+			}*/
 			
 		}catch(Exception ex) {
 			ex.printStackTrace();
