@@ -30,7 +30,7 @@ public class InventoryDAO {
 		ResultSet resultSet = null;
 		try {
 			System.out.println("before get Connection");
-			/*
+			
 			connection = dataSource.getConnection();
 			
 			System.out.println("After get connection");
@@ -43,7 +43,7 @@ public class InventoryDAO {
 				String id = resultSet.getString("id");
 				System.out.println(id);
 				
-			}*/
+			}
 			
 		}catch(Exception ex) {
 			ex.printStackTrace();
