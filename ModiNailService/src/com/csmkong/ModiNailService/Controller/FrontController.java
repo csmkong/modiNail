@@ -2,6 +2,7 @@ package com.csmkong.ModiNailService.Controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import com.csmkong.ModiNailService.DAO.InventoryDAO;
 /**
  * Servlet implementation class FrontController
  */
-@WebServlet("/Action")
+@WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,8 +31,16 @@ public class FrontController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doAction(request,response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//doAction(request,response);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String uri = request.getRequestURI();
+		String contextPath = request.getContextPath();
+		String command = uri.substring(contextPath.length());
+		
+		if(command.equals("/itemInsert.do")) {
+			response.getWriter().append("Served at: item").append(request.getContextPath());
+		}
+		
 	}
 
 	/**
@@ -39,7 +48,17 @@ public class FrontController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		String uri = request.getRequestURI();
+		String contextPath = request.getContextPath();
+		String command = uri.substring(contextPath.length());
+		
+		if(command.equals("/itemInsert.do")) {
+			//response.getWriter().append("Served at: item").append(request.getContextPath());
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/InsertItemCheck");
+			requestDispatcher.forward(request, response);
+		}
+		
 	}
 	
 	public void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
